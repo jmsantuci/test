@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+
+    <!-- ========= -->
+    <!-- Appenders -->
+    <!-- ========= -->
+
+    <!-- Log dos testes unitários do componente -->
+    <appender name="FILE" class="org.apache.log4j.FileAppender">
+        <param name="File" value="target/unit-test.log"/>
+        <param name="Append" value="false"/>
+
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{DATE} %-5p [%c] %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- Log dos comandos SQLs dos testes unitários do componente -->
+    <appender name="FILE-HB-SQL" class="org.apache.log4j.FileAppender">
+        <param name="File" value="target/hibernate-sql.log"/>
+        <param name="Append" value="false"/>
+
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{DATE} %-5p [%c] %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- Log dos comandos DDLs dos testes unitários do componente -->
+    <appender name="FILE-HB-DDL" class="org.apache.log4j.FileAppender">
+        <param name="File" value="target/hibernate-ddl.log"/>
+        <param name="Append" value="false"/>
+
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{DATE} %-5p [%c] %m%n"/>
+        </layout>
+    </appender>
+   
+  
+    <!-- ======= -->
+    <!-- Loggers -->
+    <!-- ======= -->
+
+    <logger name="jms.company.domain">
+        <level value="debug" />
+        <appender-ref ref="FILE"/>
+    </logger>
+    <logger name="org.hibernate.util">
+        <level value="debug" />
+        <appender-ref ref="FILE"/>
+    </logger>
+    <logger name="org.hibernate.event">
+        <level value="debug" />
+        <appender-ref ref="FILE"/>
+    </logger> 
+    <logger name="org.hibernate.SQL">
+        <level value="debug" />
+        <appender-ref ref="FILE-HB-SQL" />
+    </logger>
+    <logger name="org.hibernate.type">
+        <level value="debug" />
+        <appender-ref ref="FILE-HB-SQL" />
+    </logger>
+    <logger name="org.hibernate.tool.hbm2ddl">
+        <level value="debug" />
+        <appender-ref ref="FILE-HB-DDL" />
+    </logger>
+
+    <root>
+        <priority value="error" />
+    </root>
+
+</log4j:configuration>

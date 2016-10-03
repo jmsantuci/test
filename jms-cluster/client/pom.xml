@@ -1,0 +1,80 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>jms.poc.cluster.jms</groupId>
+        <artifactId>jms-poc-cluster-jms-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../parent/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>jms-poc-cluster-jms-client</artifactId>
+
+	
+    <name>JMS Cluster Producer Client</name>
+    <description>JMS Cluster Producer Client</description>
+
+    <!--build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <executions>
+                  <execution>
+                      <goals>
+                          <goal>java</goal>
+                      </goals>
+                  </execution>
+                </executions>
+                <configuration>
+                    <mainClass>jms.poc.cluster.jms.client.MessageCounterProducerClient</mainClass>
+                    <arguments>
+                        <argument>10</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build-->
+
+    <dependencies>
+        <dependency>
+            <groupId>jms.poc.cluster.jms</groupId>
+            <artifactId>jms-poc-cluster-jms-model</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jms.poc.cluster.jms</groupId>
+            <artifactId>jms-poc-cluster-jms-producer</artifactId>
+            <type>ejb-client</type>
+        </dependency>
+        <dependency>
+            <groupId>jms.poc.cluster.jms</groupId>
+            <artifactId>jms-poc-cluster-jms-consumer</artifactId>
+            <type>ejb-client</type>
+        </dependency>
+        <!--provided dependencies -->
+        <!--dependency>
+			<groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+		</dependency-->
+		<!-- Test dependencies -->
+		<dependency>
+            <groupId>jboss</groupId>
+            <artifactId>jbossall-client-mod</artifactId>
+            <version>6.0.0</version>
+        </dependency>
+        <!--dependency>
+        	<groupId>org.jboss.jbossas</groupId>
+        	<artifactId>jboss-as-client</artifactId>
+        	<version>6.0.0.Final</version>
+        </dependency-->
+        <dependency>
+            <groupId>org.jboss.spec.javax.jms</groupId>
+            <artifactId>jboss-jms-api_1.1_spec</artifactId>
+            <version>1.0.0.Final</version>
+        </dependency>
+    </dependencies>
+</project>

@@ -1,0 +1,15 @@
+package jms.network.rules
+
+import jms.network.domain.Cable;
+import jms.network.domain.Counting;
+import jms.network.domain.Equipment;
+ 
+rule "Equipment Cable Unicity"
+    when
+        $cable : Cable( )
+        $equipment : Equipment( type == 1 )
+        $counting : Counting( cable.code == $cable.code, equipment.code == $equipment.code ) from $cable.countings
+
+    then
+        throw new Exception("Equipment " + $equipment.getCode() + " already exists in Cable " + $cable.getCode());
+end

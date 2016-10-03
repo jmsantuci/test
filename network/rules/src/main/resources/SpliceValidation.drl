@@ -1,0 +1,57 @@
+#created on: 19/04/2012
+package jms.network.rules
+
+import java.util.List;
+import javax.persistence.EntityManager;
+
+import jms.network.domain.Cable;
+import jms.network.domain.Splice;
+
+
+global List messages
+global EntityManager entityManager
+
+rule "Type and Code Checking"
+
+    when
+        $splice : Splice ( type != null, code == "" || code == null )
+    then
+        messages.add( new RuleMessage("Informe o código da emenda", MessageType.ERROR) );
+end
+
+rule "Type, Code and Zone Checking"
+
+    when
+        $splice : Splice ( type == "MFP" || type == "MFS", code != null, ( zone == "" || zone == null ) || ( cable == null ) )
+    then
+        messages.add( new RuleMessage("Informe a zona e o cabo", MessageType.ERROR) );
+end
+
+
+rule "MFP Logical key unicity"
+
+    when
+        $splice : Splice ( type == "MFP", code != null, zone != null, cable != null, $code : code, $cable : cable )
+        $splices : List( size > 1 )
+                 from collect( Splice ( code == $code ) from $cable.splices )
+    then
+        messages.add( new RuleMessage("Logical key for MFP network violation", MessageType.ERROR) );
+end
+
+rule "MFP Logical key unicity 2"
+
+    when
+        $cable : Cable ( )
+        $splice : Splice ( type == "MFP", code != null, zone != null, $code : code )
+        exists ( Splice ( code == $code ) from $cable.splices )
+    then
+        messages.add( new RuleMessage("Logical key for MFP network violation 2", MessageType.ERROR) );
+end
+
+rule "MFS Logical key validation"
+	when
+        $splice : Splice ( type == "MFS", code != null, zone != null, cable != null, $code : code, $zone : zone )
+        $splices : Splice ( ) from entityManager.createNamedQuery("findSpliceByCodeAndZone").setParameter("code", $code).setParameter("zone", $zone).getResultList()
+	then
+		messages.add( new RuleMessage("Logical key for MFS network violation 2", MessageType.ERROR) );
+end

@@ -1,0 +1,21 @@
+package jms.network.rules
+
+import javax.persistence.EntityManager;
+
+import jms.network.domain.Cable;
+import jms.network.domain.Counting;
+import jms.network.domain.Equipment;
+
+
+global EntityManager entityManager
+
+rule "Equipment Cable Unicity Using JPA"
+    when
+        $cable : Cable( )
+        $equipment : Equipment( type == 1 )
+        $counting : Counting( ) from entityManager.createNamedQuery("findEquipmentByCodeAndCable").setParameter("code", $equipment.code).setParameter("cable", $cable).getResultList()
+
+    then
+        throw new Exception("Equipment " + $equipment.getCode() + " already exists in Cable " + $cable.getCode());
+end
+

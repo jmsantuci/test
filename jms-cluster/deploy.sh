@@ -1,0 +1,1 @@
+cp producer/target/jms-poc-cluster-jms-producer-1.0-SNAPSHOT.jar ~/dev/test/jboss-6.0.0-poc-jms-cluster/server/prod-01/deploy ; cp consumer/target/jms-poc-cluster-jms-consumer-1.0-SNAPSHOT.jar ~/dev/test/jboss-6.0.0-poc-jms-cluster/server/prod-01/deploy

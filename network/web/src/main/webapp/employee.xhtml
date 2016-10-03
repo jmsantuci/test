@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Gerenciador de Empregados</title>
+    </h:head>
+    <h:body>
+        <h1>Gerenciador de Empregados</h1>
+        <h:dataTable var="employee" value="#{employeeBean.employees}">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Id"/>
+                </f:facet>
+                <h:outputText value="#{employee.empId}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Name"/>
+                </f:facet>
+                <h:outputText value="#{employee.name}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Data de Nascimento"/>
+                </f:facet>
+                <h:outputText value="#{employee.birthDate}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Departamento"/>
+                </f:facet>
+                <h:outputText value="#{employee.department.name}"/>
+            </h:column>
+            <h:column rendered="#{employee.class.equals(jms.company.domain.FullTimeEmployee.class)}" >
+                <f:facet name="header">
+                    <h:outputText value="Salário"/>
+                </f:facet>
+                <h:outputText value="#{employee.salary}"/>
+            </h:column>
+            <h:column rendered="#{employee.class.equals(jms.company.domain.PartTimeEmployee.class)}" >
+                <f:facet name="header">
+                    <h:outputText value="Valor Hora"/>
+                </f:facet>
+                <h:outputText value="#{employee.hourlyWage}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Class #{employee.getClass()}"/>
+                </f:facet>
+                <h:outputText value="Class equals #{employee.getClass().equals(jms.company.domain.FullTimeEmployee.getClass())}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Alterar"/>
+                </f:facet>
+                <h:form>
+                    <h:commandButton action="#{employeeBean.prepareUpdate}" value="Alterar" />
+                </h:form>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Excluir"/>
+                </f:facet>
+                <h:form>
+                    <h:commandButton action="#{employeeBean.remove}" value="Excluir" />
+                </h:form>
+            </h:column>
+        </h:dataTable>
+        <br/>
+        <h:form>
+            <h:commandLink value="Novo Mensalista" action="#{employeeBean.prepareFullTimeEmployeeCreate}"/>
+        </h:form>
+        <h:form>
+            <h:commandLink value="Novo Horista" action="#{employeeBean.preparePartTimeEmployeeCreate}"/>
+        </h:form>
+        <h:form>
+            <h:commandLink value="Alterar Salários" action="#{employeeBean.updateSalaries}"/>
+        </h:form>
+    </h:body>
+</html>

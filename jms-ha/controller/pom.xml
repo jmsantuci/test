@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>jms.poc.ha</groupId>
+        <artifactId>jms-poc-ha-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../parent/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>jms-poc-ha-controller</artifactId>
+    <packaging>ejb</packaging>
+	
+    <name>JMS POC HA Service Controller EJB</name>
+    <description>JMS POC HA Service Controller EJB</description>
+    <!--build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ejb-plugin</artifactId>
+                <configuration>
+				    <ejbVersion>3.1</ejbVersion>
+                    <generateClient>true</generateClient>
+                    <clientExcludes>
+                        <clientExclude>**/META-INF/**.xml</clientExclude>
+                        <clientExclude>**/*Bean.class</clientExclude>
+                        <clientExclude>**/*Session.class</clientExclude>
+                        <clientExclude>**/package.html</clientExclude>
+                    </clientExcludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build-->
+    <dependencies>
+        <!--provided dependencies -->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+        </dependency>
+    </dependencies>
+</project>

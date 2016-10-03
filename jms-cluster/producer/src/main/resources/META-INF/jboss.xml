@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss>
+	<enterprise-beans>
+		<session>
+			<ejb-name>CountProducerBean</ejb-name>
+			<clustered>true</clustered>
+		</session>
+	</enterprise-beans>
+</jboss>
