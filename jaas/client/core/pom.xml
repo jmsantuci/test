@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>jms.jaas</groupId>
+        <artifactId>jms-jaas-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../../parent/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>jms-jaas-client-core</artifactId>
+
+	
+    <name>JMS JAAS - Client Core</name>
+    <description>JMS JAAS - Client Core</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>jms.jaas</groupId>
+            <artifactId>jms-jaas-hello</artifactId>
+            <type>ejb-client</type>
+        </dependency>
+        <dependency>
+            <groupId>jms.jaas</groupId>
+            <artifactId>jms-jaas-security-authenticator</artifactId>
+            <type>ejb-client</type>
+        </dependency>
+        <!--provided dependencies -->
+		<dependency>
+            <groupId>jboss</groupId>
+            <artifactId>jbossall-client-mod</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+        </dependency>
+    </dependencies>
+</project>

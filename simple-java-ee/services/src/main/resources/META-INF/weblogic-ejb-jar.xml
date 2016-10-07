@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<weblogic-ejb-jar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.bea.com/ns/weblogic/weblogic-ejb-jar http://www.bea.com/ns/weblogic/weblogic-ejb-jar/1.0/weblogic-ejb-jar.xsd"
+  xmlns="http://www.bea.com/ns/weblogic/weblogic-ejb-jar">
+  <weblogic-enterprise-bean>
+    <ejb-name>jms.simple.javaee.services.HelloServiceBean</ejb-name>
+    <stateless-session-descriptor>
+      <business-interface-jndi-name-map>
+        <business-remote>jms.simple.javaee.services.HelloServiceRemote</business-remote>
+        <jndi-name>jms/simple/jee/HelloServiceRemote</jndi-name>
+      </business-interface-jndi-name-map>
+    </stateless-session-descriptor>
+    <!--enable-call-by-reference>true</enable-call-by-reference>
+    <jndi-name>cpqd-jndi-prefix/br/com/cpqd/framework/satellite/jpa/persistence/EntityDAORemote</jndi-name-->
+  </weblogic-enterprise-bean>
+</weblogic-ejb-jar>

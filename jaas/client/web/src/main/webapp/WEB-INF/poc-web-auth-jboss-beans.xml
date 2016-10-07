@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment xmlns="urn:jboss:bean-deployer:2.0">
+	<application-policy xmlns="urn:jboss:security-beans:1.0" name="poc-web-login-module">
+        <authentication>
+            <!--login-module code="jms.jaas.client.core.PoCClientLoginModule" flag="required">
+            </login-module>
+            <login-module code="org.jboss.security.ClientLoginModule"  flag="required">
+                 <module-option name="password-stacking">useFirstPass</module-option>
+            </login-module-->
+            <!--login-module code="jms.jaas.security.PoCDecoderLoginModule"  flag="required" />
+            <login-module code="jms.jaas.security.PoCJBossLoginModule"  flag="required" /-->
+            <login-module code="org.jboss.security.auth.spi.UsersRolesLoginModule"  flag="required" >
+                <module-option name="usersProperties">users.properties</module-option>
+                <module-option name="rolesProperties">roles.properties</module-option>
+            </login-module>
+        </authentication>
+    </application-policy>
+</deployment>

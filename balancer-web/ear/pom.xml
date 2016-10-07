@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>jms.cluster.balancer</groupId>
+        <artifactId>jms-cluster-balancer-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../parent/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>jms-cluster-balancer-ear</artifactId>
+    <packaging>ear</packaging>
+
+    <name>JMS Cluster Balancer Test - Web</name>
+	
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-ear-plugin</artifactId>
+                <configuration>
+             		<applicationName>${project.artifactId}</applicationName>
+                    <displayName>Balancer Java EE Application</displayName>
+                    <description>Balancer Java EE Application - EAR</description>
+                    <defaultLibBundleDir>lib</defaultLibBundleDir>
+                    <version>6</version>
+                    <modules>
+                        <webModule>
+                            <groupId>jms.cluster.balancer</groupId>
+                            <artifactId>jms-cluster-balancer-web</artifactId>
+                            <contextRoot>/balancer-test</contextRoot>
+                        </webModule>
+						 <webModule>
+                            <groupId>jms.cluster.balancer</groupId>
+                            <artifactId>jms-cluster-balancer-web</artifactId>
+                            <contextRoot>/balancer-test2</contextRoot>
+                        </webModule>
+                    </modules>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>jms.cluster.balancer</groupId>
+            <artifactId>jms-cluster-balancer-web</artifactId>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>jms.cluster.balancer</groupId>
+            <artifactId>jms-cluster-balancer-web</artifactId>
+            <type>pom</type>
+        </dependency>
+        <!--dependency>
+            <groupId>jms.cluster.balancer</groupId>
+            <artifactId>simple-jee-services</artifactId>
+            <type>ejb</type>
+        </dependency-->
+    </dependencies>
+</project>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-web>
+    <!--security-domain>poc-web-login-module</security-domain-->
+    <security-domain flushOnSessionInvalidation="true">poc-login-module</security-domain>
+    <!--security-domain>other</security-domain-->
+</jboss-web>
