@@ -14,14 +14,14 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
 	        <plugin>
 	            <artifactId>maven-war-plugin</artifactId>
-	            <version>2.1.1</version>
+	            <version>3.0.0</version>
 	            <configuration>
 	                <!-- Java EE 6 doesn't require web.xml, Maven needs to catch up! -->
 	                <failOnMissingWebXml>false</failOnMissingWebXml>
@@ -33,14 +33,9 @@
     <dependency>
         <groupId>javax</groupId>
         <artifactId>javaee-api</artifactId>
-        <version>6.0</version>
+        <version>7.0</version>
         <scope>provided</scope>
     </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+
   </dependencies>
 </project>

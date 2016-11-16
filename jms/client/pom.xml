@@ -1,0 +1,33 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>jms.poc.jms</groupId>
+        <artifactId>jms-poc-jms-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../parent/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>jms-poc-jms-client</artifactId>
+	
+    <name>JMS Producer Client</name>
+    <description>JMS Producer Client</description>
+
+    <dependencies>
+        <!--provided dependencies -->
+        <dependency>
+			<groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+		</dependency>
+		<!-- Test dependencies -->
+		<dependency>
+            <groupId>org.wildfly</groupId>
+            <artifactId>wildfly-client-all</artifactId>
+            <version>8.2.0.Final</version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+</project>

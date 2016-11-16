@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>jms.poc.jms</groupId>
+        <artifactId>jms-poc-jms-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../parent/pom.xml</relativePath>
+    </parent>
+    <packaging>war</packaging>
+    <artifactId>jms-poc-jms-web</artifactId>
+	
+    <name>JMS Producer Web</name>
+    <description>JMS Producer Web</description>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jms.poc.jms</groupId>
+            <artifactId>jms-poc-jms-client</artifactId>
+        </dependency>
+  </dependencies>
+</project>

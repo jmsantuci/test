@@ -19,6 +19,12 @@
             <version>8.2.0.Final</version>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <groupId>br.com.cpqd.commons</groupId>
+            <artifactId>cpqd-commons-i18n-ejb</artifactId>
+            <version>10.19.12</version>
+            <scope>runtime</scope>
+        </dependency>
         <!--dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
