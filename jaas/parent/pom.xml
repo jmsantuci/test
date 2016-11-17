@@ -64,13 +64,6 @@
                 <artifactId>jms-jaas-client-web</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
-            <!-- CDK dependency -->
-            <dependency>
-                <groupId>br.com.cpqd.security</groupId>
-                <artifactId>cpqd-security-accesscontrol-ejb</artifactId>
-                <version>9.0.0-SNAPSHOT</version>
-                <type>ejb-client</type>
-            </dependency>
         </dependencies>
     </dependencyManagement>
     <!-- build section -->

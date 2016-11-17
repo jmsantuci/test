@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>jms.poc.tac</groupId>
+        <artifactId>jms-poc-tac-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../parent/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>jms-poc-tac-scheduler</artifactId>
+    <packaging>ejb</packaging>
+	
+    <name>JMS POC TAC EJB Scheduler</name>
+    <description>JMS POC Trust Scheduler EJB</description>
+
+    <dependencies>
+        <!--provided dependencies -->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jms.poc.tac</groupId>
+            <artifactId>jms-poc-tac-security</artifactId>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>jms.poc.tac</groupId>
+            <artifactId>jms-poc-tac-domain</artifactId>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+             <groupId>org.slf4j</groupId>
+             <artifactId>slf4j-api</artifactId>
+        </dependency>
+    </dependencies>
+</project>

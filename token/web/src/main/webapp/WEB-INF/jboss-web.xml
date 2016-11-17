@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-web>
+    <security-domain>jms-poc-tac-web-login-module</security-domain>
+</jboss-web>

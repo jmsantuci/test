@@ -28,7 +28,7 @@ public class WebBalancerTest {
 	private List<Node> nodes = new ArrayList<Node>();
 	private Map<String, Node> nodeMap = new HashMap<String, Node>();
 	private String host;
-	private String context = "/cpqd-balancer-test";
+	private String context = "/jms-cluster-balancer-web";
 	private String systemProperty;
 	private HttpClient httpClient = new DefaultHttpClient();
 	private HttpContext httpContext = new BasicHttpContext();

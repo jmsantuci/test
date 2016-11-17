@@ -155,7 +155,7 @@ public class HTTPSocketClient {
 		System.out.println("\n\nProgram arguments:");
 		System.out.println("\n\t<host name> <port> <path>/<query string> <target node>");
 		System.out.println("\n\nExample:");
-		System.out.println("\tsagreosp.telefonica.br 80 cpqd-wait/WaitServlet?time=900000 node1-00\n\n");
+		System.out.println("\ts1.com.br 80 jms-wait/WaitServlet?time=900000 node1-00\n\n");
 	}
 
 	/**
@@ -187,7 +187,7 @@ public class HTTPSocketClient {
 		
 		this.getOut().write(request);
 		this.getOut().write("Host: " + this.getHost() + "\n");
-		this.getOut().write("User-Agent: cpqd-KA-test\n");
+		this.getOut().write("User-Agent: jms-KA-test\n");
 		this.getOut().write("Cookie: JSESSIONID=AB12CD34." + this.getTargetNode() + "\n");
 		this.getOut().write("\n");
 		this.getOut().flush();

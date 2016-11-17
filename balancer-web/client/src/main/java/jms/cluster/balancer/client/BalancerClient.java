@@ -50,7 +50,7 @@ public class BalancerClient {
 		super();
 		this.setHost(host);
 		this.setSystemProperty(systemProperty);
-		this.setHttpGet(new HttpGet(this.getHost() + "/cpqd-balancer-test/BalancerTest?systemProperty=" + this.getSystemProperty()));
+		this.setHttpGet(new HttpGet(this.getHost() + "/jms-balancer-test/BalancerTest?systemProperty=" + this.getSystemProperty()));
 	}
 
 	/**
@@ -185,7 +185,7 @@ public class BalancerClient {
 	}
 
 	public void testStickSession() {
-		this.setHttpGet(new HttpGet(this.getHost() + "/cpqd-balancer-test/BalancerTest?systemProperty=" + this.getSystemProperty() + "&createSession=true"));
+		this.setHttpGet(new HttpGet(this.getHost() + "/jms-balancer-test/BalancerTest?systemProperty=" + this.getSystemProperty() + "&createSession=true"));
 
 		try {
 			String lastNodeName;
@@ -209,7 +209,7 @@ public class BalancerClient {
 						nodeName = nodeNameAux;
 					}
 				}
-				this.setHttpGet(new HttpGet(this.getHost() + "/cpqd-balancer-test/BalancerTest?systemProperty=" + this.getSystemProperty()));
+				this.setHttpGet(new HttpGet(this.getHost() + "/jms-balancer-test/BalancerTest?systemProperty=" + this.getSystemProperty()));
 			} while (nodeName != null && !nodeName.equals(lastNodeName));
 			if (nodeName != null && !nodeName.equals(lastNodeName)) {
 				System.out.println("Sticky session Ok for node: " + nodeName);

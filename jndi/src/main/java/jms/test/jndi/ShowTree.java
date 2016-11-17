@@ -74,7 +74,7 @@ public class ShowTree {
 			if (args.length > 0) {
 				System.out.println("Lookup: " + args[0]);
 				try {
-					Object object = context.lookup(args[0]); //"CPqD-ITControl/6.9.0.0/WebDeskMapReport/6.9.0.0/br/com/cpqd/framework/satellite/access/AccessObjectRemote"); //"CPqD-ITControl/6.9.0.0/WebApplication/");
+					Object object = context.lookup(args[0]); 
 					System.out.println("Object found!");
 					if (object instanceof Context) {
 						System.out.println("-------------------------------------------------------");

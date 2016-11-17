@@ -1,1 +1,1 @@
-ejb:cpqd-security-glue/cpqd-commons-softwareinfo-ejb/SoftwareInfoBean!br.com.cpqd.gis.swinfo.SoftwareInfoRemote
+ejb:ear-name/ejb-component-name/BeanName!package.name.RemoteInterfaceName

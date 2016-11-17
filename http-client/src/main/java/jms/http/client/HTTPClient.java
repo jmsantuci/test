@@ -29,7 +29,7 @@ public class HTTPClient {
 	public static void main(String[] args) {
 		URL url;
 		try {
-			url = new URL("http://cpqd036516:8808/index.html");
+			url = new URL("http://s1:8808/index.html");
 			HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 			urlConnection.setRequestMethod("GET");
 //			urlConnection.setRequestProperty("", "");

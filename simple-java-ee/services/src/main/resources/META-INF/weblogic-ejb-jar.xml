@@ -10,7 +10,6 @@
         <jndi-name>jms/simple/jee/HelloServiceRemote</jndi-name>
       </business-interface-jndi-name-map>
     </stateless-session-descriptor>
-    <!--enable-call-by-reference>true</enable-call-by-reference>
-    <jndi-name>cpqd-jndi-prefix/br/com/cpqd/framework/satellite/jpa/persistence/EntityDAORemote</jndi-name-->
+    <!--enable-call-by-reference>true</enable-call-by-reference-->
   </weblogic-enterprise-bean>
 </weblogic-ejb-jar>

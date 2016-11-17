@@ -18,7 +18,7 @@ public class HttpGet {
 	 * @param args
 	 */
 	public static void main(String[] args) throws Exception {
-//        String url = "https://figo.cpqd.com.br/webservicelocator";
+//        String url = "https://s1.com.br/context";
         String url = "http://[2801:b8:101:38:250:56ff:fe9c:13b2]:8180";
 		
 		URL obj = new URL(url);

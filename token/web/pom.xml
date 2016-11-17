@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>jms.poc.tac</groupId>
+        <artifactId>jms-poc-tac-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../parent/pom.xml</relativePath>
+    </parent>
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>jms-poc-tac-web</artifactId>
+	<packaging>war</packaging>
+
+	<name>JMS POC TAC Web</name>
+	<description>JMS POC Trust Access Controlle Web</description>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jms.poc.tac</groupId>
+            <artifactId>jms-poc-tac-security</artifactId>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>jms.poc.tac</groupId>
+            <artifactId>jms-poc-tac-scheduler</artifactId>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+             <groupId>org.slf4j</groupId>
+             <artifactId>slf4j-api</artifactId>
+        </dependency>
+    </dependencies>
+</project>

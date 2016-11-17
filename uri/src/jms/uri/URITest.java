@@ -49,7 +49,6 @@ public class URITest {
 			System.out.println("------------------------");
 			System.out.println(URLEncoder.encode("test=1&t2=2&t3=/&t5=1 2"));
 			System.out.println(URLEncoder.encode("test=WithoutSpace&t2=Forward///Slash&t3=Space Space Space"));
-			System.out.println(URLEncoder.encode("CPqD-ETICS/ISP-Inv", "UTF-8"));
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
